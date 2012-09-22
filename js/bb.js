@@ -15,7 +15,6 @@ jQuery( function( $ ) {
             if ( ls[ item ] ) {
                 item = JSON.parse( ls[ item ] );
                 if ( typeof( item ) === 'object' ) {
-                    newItem = itemTemplate.replace( '{qtt}', item.qtt );
                     newItem = newItem.replace( '{value}', item.value );
                     newItem = newItem.replace( '{desc}', item.desc );
                     newItem = newItem.replace( '{id}', item.id );
@@ -41,6 +40,7 @@ jQuery( function( $ ) {
         li.addClass( 'editable' );
 
         tripCalc.saveItem( li );
+        tripCalc.sum();
     };
 
     tripCalc.editItem = function( ev ) {
@@ -65,7 +65,6 @@ jQuery( function( $ ) {
 
         var self = $( elem ),
             itemId = self.data( 'id' ) || Date.now(),
-            qtt = self.find( '.qtt' ).text(),
             value = self.find( '.value' ).text(),
             desc = self.find( '.description' ).text(),
             ls = window.localStorage;
@@ -76,7 +75,7 @@ jQuery( function( $ ) {
 
         self.data( 'id', itemId );
 
-        ls[ 'tripItems' + '|y|y|' + itemId ] = "{ \"id\": \"" + itemId + "\", \"qtt\": \"" + qtt + "\", \"value\" : \"" + value + "\", \"desc\" : \"" + desc + "\" }";
+        ls[ 'tripItems' + '|y|y|' + itemId ] = "{ \"id\": \"" + itemId + "\", \"value\" : \"" + value + "\", \"desc\" : \"" + desc + "\" }";
     };
 
     tripCalc.addItem = function ( ev ) {
@@ -87,14 +86,22 @@ jQuery( function( $ ) {
             itemTemplate = $( '#item-template').html(),
             newItem = '';
         
-        newItem = itemTemplate.replace( '{qtt}', '1' );
         newItem = newItem.replace( '{value}', '0.00' );
         newItem = newItem.replace( '{desc}', 'description' );
         newItem = newItem.replace( '{id}', Date.now() );
         itemList.prepend( newItem );
 
         itemList.find( 'li' ).first().find( '.value' ).focus().trigger( 'click' );
-    }
+    };
+
+    tripCalc.sum = function () {
+        var total = 0;
+        $( '.calc-item' ).each( function() {
+            total += parseFloat( $(this).find('.value').text(), 10 );
+        });
+
+        $('.calc-total .value').text( total );
+    };
 
 
     // init
