@@ -147,4 +147,24 @@ jQuery( function( $ ) {
     doc.on( 'click touchDown touch', '.add', tripCalc.addItem );
     doc.on( 'keydown', '.calc-item', tripCalc.keyDown );
     tripCalc.loadPage();
+
+
+    $("#config-app").hide();
+
+    $(".moedas").click(function(){
+        $(".moedas").removeClass('active');
+        $(this).addClass('active');
+    })
+
+    $("#bt-config").click(function(){
+        $("#content-app").hide();
+        $("#config-app").show();
+    })
+
+    $("#back-preview").click(function(){
+        $("#config-app").hide();
+        $("#content-app").show();
+    })
+
+
 });

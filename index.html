@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    
+
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
   </head>
   <body>
@@ -26,14 +26,14 @@
                     <li class="icos add">
                         <a href="#"><i class="icon-plus"></i></a>
                     </li>
-                    <li class="icos config">
+                    <li class="icos config" id="bt-config">
                         <a href="#"><i class="icon-cog"></i></a>
                     </li>
                 </ul>
             </nav><!-- /nav -->
         </header>
             <!-- content -->
-            <section class="content">
+            <section class="content" id="content-app">
                 <div class="calc-list">
                     <ul id="item-list">
                     </ul>
@@ -47,6 +47,21 @@
     </section>
 
 
+    <section class="config page" id="config-app">
+
+        <input type="text" name="" id="" placeholder="Quanto quer gastar? Ex: 1.500,00">
+
+        <a class="moedas">U$</a>
+        <a class="moedas">R$</a>
+        <a class="moedas" style="margin-right: 0">UR$</a>
+
+        <div style="clear: both;"></div>
+
+        <input type="text" name="" id="" placeholder="Notificar-me quando 75% do valor completo">
+        <div class="valor-total">45%</div>
+
+    </section>
+
     <script type="text/template" id="item-template">
         <li class="calc-item editable" data-id="{id}">
             <div class="cur">USD</div>
@@ -54,12 +69,9 @@
             <span class="description editable">{desc}</span>
         </li>
     </script>
-
-
-
+    
     <script src="js/lib/jquery.js"></script>
     <script src="js/bb.js"></script>
-
 
 
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
