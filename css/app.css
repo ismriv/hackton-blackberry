@@ -147,3 +147,7 @@ nav li {
 
 .add {
 }
+
+[contenteditable] {
+  color: green;
+}
