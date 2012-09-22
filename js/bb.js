@@ -6,27 +6,42 @@ jQuery( function( $ ) {
 
     tripCalc.loadPage = function() {
         var itemList = $( '#item-list' ),
-            itemTemplate = $( '#item-template'),
+            itemTemplate = $( '#item-template').html(),
             ls = window.localStorage,
-            i, l;
+            i, l, item,
+            newItem = '';
 
-
+        for ( item in ls ) {
+            if ( ls[ item ] ) {
+                item = JSON.parse( ls[ item ] );
+                if ( typeof( item ) === 'object' ) {
+                    newItem = itemTemplate.replace( '{qtt}', item.qtt );
+                    newItem = newItem.replace( '{value}', item.value );
+                    newItem = newItem.replace( '{desc}', item.desc );
+                    newItem = newItem.replace( '{id}', item.id );
+                    itemList.prepend( newItem );
+                } 
+            }
+        }
     };
 
     tripCalc.editDone = function( ev ) {
         if ( ev && ev.preventDefault ) {
             ev.preventDefault();
-            ev.stopBubbling();
+            ev.stopPropagation();
+            
         }
+
+        var li = $( this ).closest( '.calc-item' );
 
         $( '.calc-item .editable' ).each( function() {
             $( this ).removeAttr( 'contenteditable' );
         });
 
-        $( this ).addClass( 'editable' );
+        li.addClass( 'editable' );
 
-        tripCalc.saveItem( this );
-    }
+        tripCalc.saveItem( li );
+    };
 
     tripCalc.editItem = function( ev ) {
         if ( ev && ev.preventDefault ) {
@@ -55,18 +70,36 @@ jQuery( function( $ ) {
             desc = self.find( '.description' ).text(),
             ls = window.localStorage;
 
+        if ( value === '' ) {
+            return;
+        }
+
         self.data( 'id', itemId );
 
-        ls['tripItems'] = ls['tripItems'] || [];
-
-        ls['tripItems'].itemId = {
-            qtt : qtt,
-            value : value,
-            desc : desc,
-            lastUpdated : Date.now()
-        };
+        ls[ 'tripItems' + '|y|y|' + itemId ] = "{ \"id\": \"" + itemId + "\", \"qtt\": \"" + qtt + "\", \"value\" : \"" + value + "\", \"desc\" : \"" + desc + "\" }";
     };
 
+    tripCalc.addItem = function ( ev ) {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        var itemList = $( '#item-list' ),
+            itemTemplate = $( '#item-template').html(),
+            newItem = '';
+        
+        newItem = itemTemplate.replace( '{qtt}', '1' );
+        newItem = newItem.replace( '{value}', '0.00' );
+        newItem = newItem.replace( '{desc}', 'description' );
+        newItem = newItem.replace( '{id}', Date.now() );
+        itemList.prepend( newItem );
+
+        itemList.find( 'li' ).first().find( '.value' ).focus().trigger( 'click' );
+    }
+
+
+    // init
     doc.on( 'click touchDown touch', '.calc-item.editable', tripCalc.editItem );
     doc.on( 'click touchDown touch', '.item-action', tripCalc.editDone );
+    doc.on( 'click touchDown touch', '.add', tripCalc.addItem );
+    tripCalc.loadPage();
 });
