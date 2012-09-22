@@ -58,7 +58,7 @@ header .logo {
   overflow:hidden;
   text-indent: -100%;
   display: block;
-  background:transparent url(../img/logo.png) no-repeat 0 0;
+  background:transparent url(../img/logo-tripcalc.png) no-repeat 0 0;
   width:188px;
   height:50px;
 }
@@ -156,7 +156,7 @@ nav li {
 .icos a:active {box-shadow: inset 0 0 0 3px rgba(255,255,255,1);}
 .add {
 }
-
+.config {display: none;}
 
 /* capa */
 .capa {
@@ -185,6 +185,7 @@ nav li {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
+    z-index:-1;
  }
 
 }
@@ -197,6 +198,7 @@ nav li {
  100% {
    filter: alpha(opacity=0);
    opacity: 0;
+   z-index:-1;
  }
 
 }
@@ -209,6 +211,7 @@ nav li {
  100% {
    filter: alpha(opacity=0);
    opacity: 0;
+   z-index:-1;
  }
 
 }
@@ -223,6 +226,7 @@ nav li {
    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: alpha(opacity=0);
    opacity: 0;
+   z-index:-1;
  }
 
 }
@@ -235,6 +239,7 @@ nav li {
  100% {
    filter: alpha(opacity=0);
    opacity: 0;
+   z-index:-1;
  }
 
 }
