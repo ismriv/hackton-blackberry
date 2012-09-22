@@ -34,9 +34,8 @@ body {
 .totalPrice { background: yellow; height: 50px; width: 100%; }*/
 
 section:after, div:after, ul:after, li:after {content:"";height:0;display:block; overflow: hidden;font-size:0;clear:both;}
-
 header {
-  height: 23px;
+  height: 28px;
   position:relative;
   background: #a2c35c;
   background-image: -webkit-linear-gradient(top, #a2c35c, #8aae3c);
@@ -50,10 +49,18 @@ header {
   text-shadow: 0 1px 1px rgba(0,0,0,.3);
 }
 header .logo {
-  position:relative;
-  top:2px;
+  position:absolute;
+  z-index:10;
+  top: 5px;
+  left:15px;
   font-size:1.8em;
   font-weight: bolder;
+  overflow:hidden;
+  text-indent: -100%;
+  display: block;
+  background:transparent url(../img/logo.png) no-repeat 0 0;
+  width:188px;
+  height:50px;
 }
 
 .content {
@@ -148,4 +155,31 @@ nav li {
 }
 .icos a:active {box-shadow: inset 0 0 0 3px rgba(255,255,255,1);}
 .add {
+}
+
+
+/* capa */
+.capa {
+  opacity:1;
+  position:fixed;
+  z-index:20;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: transparent url(../img/capa.jpg) no-repeat center center;
+  background-size: 100% auto;
+  -webkit-animation: capa .4s linear 2s forwards;
+  -moz-animation: capa .4s linear 2s forwards;
+  -o-animation: capa .4s linear 2s forwards;
+  -ms-animation: capa .4s linear 2s forwards;
+  animation: capa .4s linear 2s forwards;
+}
+@-webkit-keyframes capa {
+   0% {
+  opacity: 1;
+   }
+   100% {
+  opacity:0;
+   }
 }
