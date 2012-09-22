@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Trip Calc</title>
+    <title></title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -13,52 +13,53 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
-
   </head>
   <body>
 
     <!-- Add your site or application content here -->
     <section class="preview page activePage">
 
-        <header>TripCalc</header>
+        <header>
+            <span class="logo">TripCalc</span>
+            <nav class="nav">
+                <ul>
+                    <li class="icos add">
+                        <a href="#"><i class="icon-plus"></i></a>
+                    </li>
+                    <li class="icos config">
+                        <a href="#"><i class="icon-cog"></i></a>
+                    </li>
+                </ul>
+            </nav><!-- /nav -->
+        </header>
             <!-- content -->
             <section class="content">
                 <div class="calc-list">
-                    <ul id="item-list">
-                        <li class="calc-item editable">
+                    <ul>
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <span class="value">370,00</span>
+                            <span class="description">Local do pagamento</span>
                         </li>
-                        <li class="calc-item editable">
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <span class="value">370,00</span>
+                            <span class="description">Local do pagamento</span>
                         </li>
-                        <li class="calc-item editable">
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <span class="value">370,00</span>
+                            <span class="description">Local do pagamento</span>
                         </li>
-                        <li class="calc-item editable">
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <span class="value">370,00</span>
+                            <span class="description">Local do pagamento</span>
                         </li>
-                        <li class="calc-item editable">
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <span class="value">370,00</span>
+                            <span class="description">Local do pagamento</span>
                         </li>
                     </ul>
                 </div>
@@ -68,38 +69,42 @@
                 </div>
             </section>
             <!-- / content -->
-
-            <nav class="nav">
-                <ul>
-                    <li class="icos add">
-                        <a href="#"><i class="icon-plus"></i> Add</a>
-                    </li>
-                    <li class="icos config">
-                        <a href="#"><i class="icon-cog"></i> Configuration</a>
-                    </li>
-                </ul>
-            </nav><!-- /nav -->
     </section>
 
 
+    <section class="add page">
+        b
+    </section>
 
-    <script type="text/template" id="item-template">
-        <li class="calc-item editable">
-            <div class="cur">USD</div>
-            <span class="qtt editable">{qtt}</span>
-            <span class="value editable">{value}</span>
-            <span class="description editable">{desc}</span>
-            <div class="item-action"></div>
-        </li>
-    </script>
-    
+
+    <section class="config page">
+        c
+    </section>
+
+
+    <!-- <section class="totalPrice">
+        q
+    </section>
+
+
+    <nav class="controls">
+        w
+    </nav> -->
+
+
+
 
 
 
     <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
 
-    <script src="js/lib/jquery.js"></script>
-    <script src="js/bb.js"></script>
+    <!-- Using require.js, a module system for javascript, include the
+         js files. This loads "main.js", which in turn can load other
+         files, all handled by require.js:
+         http://requirejs.org/docs/api.html#jsfiles -->
+    <script type="text/javascript"
+            data-main="js/app.js"
+            src="js/lib/require.js"></script>
 
 
 

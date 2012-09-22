@@ -15,7 +15,7 @@
 
 body {
   position: relative;
-  background: #f1f1f1;
+  background: #2b2b2b;
   overflow: hidden;
   font: 10px/1.2em "Helvetica", Arial, sans-serif;
   color: #fff;
@@ -26,9 +26,7 @@ body {
   min-height: 100%;
   outline: 1px solid #333
 }
-.add { background: #fff; }
-.config { background: #0f0; }
-.preview { position: relative; background: #00f; }
+.preview { position: relative;; }
 .preview .content { position: relative; height: 75%; overflow-y: auto; overflow-x: hidden; }
 .preview .nav { height: 25%; }
 .preview .nav ul, .preview .nav li { height: 100%; }
@@ -38,19 +36,26 @@ body {
 section:after, div:after, ul:after, li:after {content:"";height:0;display:block; overflow: hidden;font-size:0;clear:both;}
 
 header {
+  height: 23px;
+  position:relative;
   background: #a2c35c;
-    background-image: -webkit-linear-gradient(top, #a2c35c, #8aae3c);
-    background-image:    -moz-linear-gradient(top, #a2c35c, #8aae3c);
-    background-image:      -o-linear-gradient(top, #a2c35c, #8aae3c);
-    background-image:         linear-gradient(to bottom, #a2c35c, #8aae3c);
-
-  text-align: center;
-  padding: 15px 0;
+  background-image: -webkit-linear-gradient(top, #a2c35c, #8aae3c);
+  background-image:    -moz-linear-gradient(top, #a2c35c, #8aae3c);
+  background-image:      -o-linear-gradient(top, #a2c35c, #8aae3c);
+  background-image:         linear-gradient(to bottom, #a2c35c, #8aae3c);
+  padding: 15px 0 15px 15px;
   font-size: 2em;
   color:#fff;
   box-shadow: 0 2px 1px 0 rgba(0,0,0,.2);
   text-shadow: 0 1px 1px rgba(0,0,0,.3);
 }
+header .logo {
+  position:relative;
+  top:2px;
+  font-size:1.8em;
+  font-weight: bolder;
+}
+
 .content {
   background: #2e3128 url(../img/bg.jpg) repeat 0 0;
 }
@@ -64,23 +69,11 @@ ul {
   position: relative;
   border-bottom: 1px solid rgba(0,0,0,.5);
   padding:20px;
-    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
-    background-image:    -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
-    background-image:      -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
-    background-image:         linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.05));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
+  background-image:    -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
+  background-image:      -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
+  background-image:         linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.05));
 }
-
-.edit-item {
-  padding-right: 50px;
-}
-.item-action {
-  position: absolute;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
-}
-
 .cur {
   position: absolute;
   top:20px;
@@ -114,7 +107,10 @@ ul {
 }
 /* total */
 .calc-total {
-  position: relative;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
   border-top: 1px solid rgba(0,0,0,.8);
   padding:20px;
   background: #c3615c;
@@ -126,28 +122,30 @@ ul {
   color:#fff;
   margin-left:100px;
 }
-/*.nav {
-  position: absolute;
-  bottom: 0;
-}*/
+.nav {
+  position:absolute;
+  right: 5px;
+  top: 5px;
+}
 nav li {
-  width: 50%;
-  float: left;
-  color: #FFF;
+  display:inline-block;
+  margin-left:5px;
   text-align: center;
   color: #333;
-  border: none;
-  padding: 3% 0;
+  border: none;  
 }
 .icos a {
-  color: #000;
-  font-size: 18px;
+  position:relative;
+  display:block;
+  padding:15px 10px 13px;
+  color: #fff;
+  font-size: 24px;
   text-decoration: none;
+  background: #84a53d;
+  box-shadow: inset 0 0 0 3px rgba(0,0,0,.3);
+  text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+  border-radius: 6px;
 }
-
+.icos a:active {box-shadow: inset 0 0 0 3px rgba(255,255,255,1);}
 .add {
-}
-
-[contenteditable] {
-  color: green;
 }
