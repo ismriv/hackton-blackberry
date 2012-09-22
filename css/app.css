@@ -103,6 +103,7 @@ ul {
   font-size: 1.6em;
   line-height:1em;
   margin: 0 0 .2em 60px;
+  outline: medium none;
 }
 .description {
   color:#666;
@@ -111,6 +112,7 @@ ul {
   display: block;
   letter-spacing: -.02em;
   margin-left: 60px;
+  outline: medium none;
 }
 /* total */
 .calc-total {
@@ -157,6 +159,11 @@ nav li {
 .add {
 }
 .config {display: none;}
+
+[contenteditable] {
+  color: #ff7766;
+  outline: medium none;
+}
 
 /* capa */
 .capa {

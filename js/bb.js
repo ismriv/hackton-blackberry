@@ -129,7 +129,7 @@ jQuery( function( $ ) {
             total += parseFloat( $(this).find('.value').text(), 10 );
         });
 
-        $('.calc-total .value').text( 'R$ ' + Currency.getRate( total, 'USD', 'BRL' ) );
+        $('.calc-total .value').text( 'R$ ' + Currency.getRate( total, 'USD', 'BRL' ).toFixed( 2 ).replace( '.', ',' ) );
     };
 
     tripCalc.keyDown = function( ev ) {
