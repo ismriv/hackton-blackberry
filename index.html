@@ -35,12 +35,12 @@
             <!-- content -->
             <section class="content" id="content-app">
                 <div class="calc-list">
-                    <ul>
-                        <li class="calc-item">
+                    <ul id="item-list">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <a class="item-action" href="#"></a>
+                            <span class="value editable">370.00</span>
+                            <span class="description editable">Exemplo</span>
+                            <a class="item-action" href="#">#</a>
                         </li>
                         
                     </ul>
@@ -74,12 +74,13 @@
             <div class="cur">USD</div>
             <span class="value editable">{value}</span>
             <span class="description editable">{desc}</span>
-            <div class="item-action"></div>
+            <a class="item-action" href="#">#</a>
         </li>
     </script>
     
     <script src="js/lib/jquery.js"></script>
     <script src="js/bb.js"></script>
+
 
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
          mathiasbynens.be/notes/async-analytics-snippet -->
