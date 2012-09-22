@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title></title>
+    <title>Trip Calc</title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -13,41 +13,64 @@
     <link rel="stylesheet" href="css/font-awesome.css">
 
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
+
   </head>
   <body>
 
     <!-- Add your site or application content here -->
     <section class="preview page activePage">
 
-        <header>TripCalc</header>
+        <header>
+            <span class="logo">TripCalc</span>
+            <nav class="nav">
+                <ul>
+                    <li class="icos add">
+                        <a href="#"><i class="icon-plus"></i></a>
+                    </li>
+                    <li class="icos config" id="bt-config">
+                        <a href="#"><i class="icon-cog"></i></a>
+                    </li>
+                </ul>
+            </nav><!-- /nav -->
+        </header>
             <!-- content -->
-            <section class="content">
+            <section class="content" id="content-app">
                 <div class="calc-list">
-                    <ul>
-                        <li class="calc-item">
+                    <ul id="item-list">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
-                        <li class="calc-item">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
-                        <li class="calc-item">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
-                        <li class="calc-item">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
-                        <li class="calc-item">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
                     </ul>
                 </div>
@@ -57,27 +80,10 @@
                 </div>
             </section>
             <!-- / content -->
-
-            <nav class="nav">
-                <ul>
-                    <li class="icos add">
-                        <a href="#"><i class="icon-plus"></i> Add</a>
-                    </li>
-                    <li class="icos config">
-                        <a href="#"><i class="icon-cog"></i> Configuration</a>
-                    </li>
-                </ul>
-            </nav><!-- /nav -->
     </section>
 
 
-    <section class="add page">
-        b
-    </section>
-
-
-    <section class="config page">
-        <header>Configuration</header>
+    <section class="config page" id="config-app">
 
         <input type="text" name="" id="" placeholder="Quanto quer gastar? Ex: 1.500,00">
 
@@ -92,17 +98,18 @@
 
     </section>
 
-
-
-    <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-    <!-- Using require.js, a module system for javascript, include the
-         js files. This loads "main.js", which in turn can load other
-         files, all handled by require.js:
-         http://requirejs.org/docs/api.html#jsfiles -->
-    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/template" id="item-template">
+        <li class="calc-item editable">
+            <div class="cur">USD</div>
+            <span class="qtt editable">{qtt}</span>
+            <span class="value editable">{value}</span>
+            <span class="description editable">{desc}</span>
+            <div class="item-action"></div>
+        </li>
+    </script>
     
-
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/bb.js"></script>
 
 
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
