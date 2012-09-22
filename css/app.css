@@ -52,8 +52,7 @@ header {
   background-image:    -moz-linear-gradient(top, #a2c35c, #8aae3c);
   background-image:      -o-linear-gradient(top, #a2c35c, #8aae3c);
   background-image:         linear-gradient(to bottom, #a2c35c, #8aae3c);
-  text-align: center;
-  padding: 15px 0;
+  padding: 15px 0 15px 15px;
   font-size: 2em;
   color:#fff;
   box-shadow: 0 2px 1px 0 rgba(0,0,0,.2);
@@ -84,18 +83,6 @@ ul {
   background-image:      -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,.05));
   background-image:         linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.05));
 }
-
-.edit-item {
-  padding-right: 50px;
-}
-.item-action {
-  position: absolute;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
-}
-
 .cur {
   position: absolute;
   top:20px;
@@ -174,6 +161,7 @@ nav li {
 }
 .icos a:active {box-shadow: inset 0 0 0 3px rgba(255,255,255,1);}
 .add {
+
 }
 
 
@@ -237,8 +225,6 @@ margin: 25px 35px;
 
   text-shadow: 2px 1px 1px #333;
 }
-
-
 
 
 

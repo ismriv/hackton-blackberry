@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Trip Calc</title>
+    <title></title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/font-awesome.css">
 
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
-
   </head>
   <body>
 
@@ -36,42 +35,14 @@
             <!-- content -->
             <section class="content" id="content-app">
                 <div class="calc-list">
-                    <ul id="item-list">
-                        <li class="calc-item editable">
+                    <ul>
+                        <li class="calc-item">
                             <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
                             <span class="value editable">370,00</span>
                             <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
+                            <a class="item-action" href="#"></a>
                         </li>
-                        <li class="calc-item editable">
-                            <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
-                        </li>
-                        <li class="calc-item editable">
-                            <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
-                        </li>
-                        <li class="calc-item editable">
-                            <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
-                        </li>
-                        <li class="calc-item editable">
-                            <div class="cur">USD</div>
-                            <span class="qtt editable">1</span>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <div class="item-action"></div>
-                        </li>
+                        
                     </ul>
                 </div>
                 <div class="calc-total">
@@ -99,9 +70,8 @@
     </section>
 
     <script type="text/template" id="item-template">
-        <li class="calc-item editable">
+        <li class="calc-item editable" data-id="{id}">
             <div class="cur">USD</div>
-            <span class="qtt editable">{qtt}</span>
             <span class="value editable">{value}</span>
             <span class="description editable">{desc}</span>
             <div class="item-action"></div>
@@ -110,7 +80,6 @@
     
     <script src="js/lib/jquery.js"></script>
     <script src="js/bb.js"></script>
-
 
     <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
          mathiasbynens.be/notes/async-analytics-snippet -->
