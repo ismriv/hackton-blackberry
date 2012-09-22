@@ -35,12 +35,12 @@
             <!-- content -->
             <section class="content">
                 <div class="calc-list">
-                    <ul>
-                        <li class="calc-item">
+                    <ul id="item-list">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value editable">370,00</span>
-                            <span class="description editable">Local do pagamento</span>
-                            <a class="item-action" href="#"></a>
+                            <span class="value editable">370.00</span>
+                            <span class="description editable">Exemplo</span>
+                            <a class="item-action" href="#">#</a>
                         </li>
                         
                     </ul>
@@ -54,47 +54,19 @@
     </section>
 
 
-    <section class="add page">
-        b
-    </section>
-
-
-    <section class="config page">
-        c
-    </section>
-
-
-    <!-- <section class="totalPrice">
-        q
-    </section>
-
-
-    <nav class="controls">
-        w
-    </nav> -->
-
-
-
     <script type="text/template" id="item-template">
         <li class="calc-item editable" data-id="{id}">
             <div class="cur">USD</div>
             <span class="value editable">{value}</span>
             <span class="description editable">{desc}</span>
-            <div class="item-action"></div>
+            <a class="item-action" href="#">#</a>
         </li>
     </script>
 
 
 
-    <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-    <!-- Using require.js, a module system for javascript, include the
-         js files. This loads "main.js", which in turn can load other
-         files, all handled by require.js:
-         http://requirejs.org/docs/api.html#jsfiles -->
-    <script type="text/javascript"
-            data-main="js/app.js"
-            src="js/lib/require.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/bb.js"></script>
 
 
 

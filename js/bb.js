@@ -15,7 +15,7 @@ jQuery( function( $ ) {
             if ( ls[ item ] ) {
                 item = JSON.parse( ls[ item ] );
                 if ( typeof( item ) === 'object' ) {
-                    newItem = newItem.replace( '{value}', item.value );
+                    newItem = itemTemplate.replace( '{value}', item.value );
                     newItem = newItem.replace( '{desc}', item.desc );
                     newItem = newItem.replace( '{id}', item.id );
                     itemList.prepend( newItem );
@@ -86,7 +86,7 @@ jQuery( function( $ ) {
             itemTemplate = $( '#item-template').html(),
             newItem = '';
         
-        newItem = newItem.replace( '{value}', '0.00' );
+        newItem = itemTemplate.replace( '{value}', '0.00' );
         newItem = newItem.replace( '{desc}', 'description' );
         newItem = newItem.replace( '{id}', Date.now() );
         itemList.prepend( newItem );
