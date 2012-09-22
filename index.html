@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title></title>
+    <title>Trip Calc</title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
+
   </head>
   <body>
 
@@ -24,30 +25,12 @@
             <section class="content">
                 <div class="calc-list">
                     <ul>
-                        <li class="calc-item">
+                        <li class="calc-item editable">
                             <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
-                        </li>
-                        <li class="calc-item">
-                            <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
-                        </li>
-                        <li class="calc-item">
-                            <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
-                        </li>
-                        <li class="calc-item">
-                            <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
-                        </li>
-                        <li class="calc-item">
-                            <div class="cur">USD</div>
-                            <span class="value">370,00</span>
-                            <span class="description">Local do pagamento</span>
+                            <span class="qtt editable">1</span>
+                            <span class="value editable">370,00</span>
+                            <span class="description editable">Local do pagamento</span>
+                            <div class="item-action"></div>
                         </li>
                     </ul>
                 </div>
@@ -71,9 +54,14 @@
     </section>
 
 
-    <section class="add page">
-        b
-    </section>
+
+    <script type="text/template" id="add_page_template">
+        
+    </script>
+    <script type="text/template" id="config_page_template">
+
+    </script>
+    
 
 
     <section class="config page">
@@ -81,29 +69,12 @@
     </section>
 
 
-    <!-- <section class="totalPrice">
-        q
-    </section>
-
-
-    <nav class="controls">
-        w
-    </nav> -->
-
-
-
-
 
 
     <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
 
-    <!-- Using require.js, a module system for javascript, include the
-         js files. This loads "main.js", which in turn can load other
-         files, all handled by require.js:
-         http://requirejs.org/docs/api.html#jsfiles -->
-    <script type="text/javascript"
-            data-main="js/app.js"
-            src="js/lib/require.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/bb.js"></script>
 
 
 
