@@ -175,7 +175,6 @@ nav li {
   left:0;
   right:0;
   background: transparent url(../img/capa.jpg) no-repeat center center;
-  background-size: 100% auto;
   -webkit-animation: capa .4s linear 2s forwards;
   -moz-animation: capa .4s linear 2s forwards;
   -o-animation: capa .4s linear 2s forwards;
