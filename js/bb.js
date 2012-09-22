@@ -4,6 +4,35 @@ jQuery( function( $ ) {
 
     window.tripCalc = tripCalc;
 
+    var Currency = {
+      //Rates are USD based
+      rates: null,
+
+      init: function(cb) {
+          if (Currency.rates !== null) {
+            cb();
+            return;
+          }
+
+          $.getJSON(
+              "http://openexchangerates.org/latest.json",
+              function(data) {
+                  Currency.rates = data.rates;
+                  if (cb !== undefined) {
+                    cb();
+                  }
+                  tripCalc.sum();
+              }
+          );
+      },
+
+      getRate: function(value, currencyFrom, currencyTo) {
+          var dollarValue = value / Currency.rates[currencyFrom];
+          var toValue = dollarValue * Currency.rates[currencyTo];
+          return toValue;
+      }
+    };
+
     tripCalc.loadPage = function() {
         var itemList = $( '#item-list' ),
             itemTemplate = $( '#item-template').html(),
@@ -100,14 +129,23 @@ jQuery( function( $ ) {
             total += parseFloat( $(this).find('.value').text(), 10 );
         });
 
-        $('.calc-total .value').text( total );
+        $('.calc-total .value').text( 'R$ ' + Currency.getRate( total, 'USD', 'BRL' ) );
+    };
+
+    tripCalc.keyDown = function( ev ) {
+        if ( ev.keyCode === 13 ) {
+            tripCalc.editDone.call( this, ev );
+            return false;
+        }
     };
 
 
     // init
+    Currency.init();
     doc.on( 'click touchDown touch', '.calc-item.editable', tripCalc.editItem );
     doc.on( 'click touchDown touch', '.item-action', tripCalc.editDone );
     doc.on( 'click touchDown touch', '.add', tripCalc.addItem );
+    doc.on( 'keydown', '.calc-item', tripCalc.keyDown );
     tripCalc.loadPage();
 
 
